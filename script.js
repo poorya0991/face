@@ -1,8 +1,8 @@
 // const video = document.getElementById('myImg')
 
 // Promise.all([
-//   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-//   faceapi.nets.faceLandmark68Net.loadFromUri('/models')
+//   faceapi.nets.tinyFaceDetector.loadFromUri('/face/models'),
+//   faceapi.nets.faceLandmark68Net.loadFromUri('/face/models')
 //  ]).then(()=>start())
 
 // async function start() {
