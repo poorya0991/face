@@ -79,8 +79,8 @@ navigator.getUserMedia = ( navigator.getUserMedia ||
                        navigator.mozGetUserMedia ||
                        navigator.msGetUserMedia);
 Promise.all([
-     faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-     faceapi.nets.tinyFaceDetector.loadFromUri('/models')
+     faceapi.nets.faceLandmark68Net.loadFromUri('/face/models'),
+     faceapi.nets.tinyFaceDetector.loadFromUri('/face/models')
 ]).then(()=>startVideo())
 
 
