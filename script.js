@@ -110,8 +110,12 @@ function setup() {
   myCanvas.position(0, 0);
   capture = createCapture(VIDEO);
   capture.hide()
-  frameRate(15)
-  filter(BLUR, 1); 
+  frameRate(5)
+  filter(BLUR, 3); 
+  noStroke()
+  colorMode(HSB, 100);
+  c = color(0, 100, 200);
+  c.setAlpha(55)
   
 }
 
@@ -121,19 +125,20 @@ function setup() {
  
  function draw() {
   
-  clear()
+    noLoop()
+
   
   
   if (detections.length > 0) {
-    
+    clear()
     blendMode(currBlendMode); 
       const lab = detections[0].landmarks.getMouth();
 
       beginShape();
+      noErase();
   
-  
-  noStroke()
-  fill('rgba(204, 0, 0, 0.4)');
+  fill(c);
+  console.log(brightness('rgba(204, 0, 0, 0.4)'))
 
   curveVertex(lab[0].x,lab[0].y);
   //  circle(lab[0].x,lab[0].y, 10); 
@@ -146,9 +151,10 @@ function setup() {
   curveVertex(lab[0].x,lab[0].y);
   // circle(lab[0].x,lab[0].y, 10); 
    endShape();
+   image(capture, 0,0);
   }
 
-  image(capture, 0,0);
+ 
 }
 
 
@@ -163,12 +169,12 @@ async function startVideo(){
 
 
 detections = resizedDetections
-
+redraw()
 }
 
 
 
-var myVar = setInterval(startVideo, 100);
+var myVar = setInterval(startVideo, 150);
 
 
 function changeBlendMode() { 
