@@ -114,7 +114,7 @@ function setup() {
   filter(BLUR, 3); 
   noStroke()
   colorMode(HSB, 100);
-  c = color(0, 100, 100);
+  c = color(0, 100, 50);
   c.setAlpha(55)
   
 }
