@@ -74,14 +74,19 @@
 let detections = [];
 
 
+// Promise.all([
+//      faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+//      faceapi.nets.tinyFaceDetector.loadFromUri('/models')
+// ]).then(()=>startVideo())
+
 Promise.all([
-     faceapi.nets.faceLandmark68Net.loadFromUri('/face/models'),
-     faceapi.nets.tinyFaceDetector.loadFromUri('/face/models')
+  faceapi.nets.faceLandmark68Net.loadFromUri('/face/models'),
+  faceapi.nets.tinyFaceDetector.loadFromUri('/face/models')
 ]).then(()=>startVideo())
 
-
-
 var myCanvas;
+let capture;
+
 function setup() {
   blendModes = [ 
     MULTIPLY, 
@@ -104,6 +109,8 @@ function setup() {
   myCanvas.parent('container');
   myCanvas.position(0, 0);
   capture = createCapture(VIDEO);
+  capture.hide()
+  frameRate(15)
   filter(BLUR, 1); 
   
 }
@@ -114,11 +121,11 @@ function setup() {
  
  function draw() {
   
-
-  image(capture, capture.x, capture.y, capture.width, capture.height);
+  clear()
+  
   
   if (detections.length > 0) {
-    clear()
+    
     blendMode(currBlendMode); 
       const lab = detections[0].landmarks.getMouth();
 
@@ -140,6 +147,8 @@ function setup() {
   // circle(lab[0].x,lab[0].y, 10); 
    endShape();
   }
+
+  image(capture, 0,0);
 }
 
 
@@ -159,7 +168,7 @@ detections = resizedDetections
 
 
 
-var myVar = setInterval(startVideo, 1000);
+var myVar = setInterval(startVideo, 100);
 
 
 function changeBlendMode() { 
