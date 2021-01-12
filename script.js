@@ -166,7 +166,7 @@ function setup() {
   // text('0',lab[0].x,lab[0].y);
 
 
-  var yMargin=6;  
+  var yMargin=4;  
 
   curveVertex(lab[0].x,lab[0].y-yMargin);
   curveVertex(lab[1].x,lab[1].y-yMargin);
