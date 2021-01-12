@@ -115,9 +115,15 @@ function setup() {
   filter(BLUR, 3); 
   noStroke()
   colorMode(HSB, 100);
+<<<<<<< HEAD
   c = color(0, 100, 230);
   c.setAlpha(55)
   curveTightness(-0.5);
+=======
+  c = color(0, 100, 20);
+  c.setAlpha(155)
+  
+>>>>>>> 55214098ae93a93edad65a7d78fb054ac60b7c2b
 }
 
 
@@ -241,6 +247,7 @@ function keyPressed() {
     changeBlendMode()
   } 
 }
+<<<<<<< HEAD
 
 
 // curveVertex(lab[0].x,lab[0].y);
@@ -296,3 +303,5 @@ function keyPressed() {
 // 371.76407121450893,188.57696404441555 
 // 363.08290405693765,187.89895457321555 
 // 355.22631073142486,186.88099373582526 
+=======
+>>>>>>> 55214098ae93a93edad65a7d78fb054ac60b7c2b
