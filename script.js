@@ -106,7 +106,7 @@ function setup() {
   
   index = 0; 
   currBlendMode = blendModes[index]; 
-  myCanvas = createCanvas(640, 480);
+  myCanvas = createCanvas(320, 240);
   myCanvas.parent('container');
   myCanvas.position(0, 0);
   capture = createCapture(VIDEO);
@@ -118,6 +118,7 @@ function setup() {
   c = color(0, 100, 230);
   c.setAlpha(55)
   curveTightness(-0.5);
+  scale(2);
 }
 
 
@@ -166,7 +167,7 @@ function setup() {
   // text('0',lab[0].x,lab[0].y);
 
 
-  var yMargin=2;  
+  var yMargin=3;  
 
   curveVertex(lab[0].x,lab[0].y-yMargin);
   curveVertex(lab[1].x,lab[1].y-yMargin);
